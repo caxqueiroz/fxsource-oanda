@@ -17,6 +17,7 @@ import org.springframework.http.client.ClientHttpRequest;
 import org.springframework.messaging.Message;
 import org.springframework.messaging.MessageChannel;
 import org.springframework.messaging.support.MessageBuilder;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.web.client.RestOperations;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriComponents;
@@ -80,7 +81,7 @@ public class TickSourceOanda {
 
     private AtomicBoolean running = new AtomicBoolean();
 
-
+    @Async
     public void start(){
 
         running.compareAndSet(false,true);
