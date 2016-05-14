@@ -6,8 +6,10 @@ a spring cloud stream source for FX tick data (Oanda provider).
 $ mvn clean package
 ```
 
-### To deploy to Cloud Foundry (make sure you have created the required services and you have th API setup). 
+### To deploy to Cloud Foundry 
+
 ```
 cf push
 ```
 
+*make sure you have created the required services and you have th API setup*
