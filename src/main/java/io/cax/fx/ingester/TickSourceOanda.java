@@ -39,9 +39,12 @@ public class TickSourceOanda {
 
     Logger logger = LoggerFactory.getLogger(TickSourceOanda.class);
 
-    @Autowired
     private MultiOutputSource channels;
 
+    @Autowired
+    public void setChannels(MultiOutputSource channels) {
+        this.channels = channels;
+    }
 
     @Value("${oanda.access_token}")
     private String accessToken;
@@ -153,7 +156,6 @@ public class TickSourceOanda {
         }
 
     }
-
 
     private ClientHttpRequest setHeaders(ClientHttpRequest clientHttpRequest){
         clientHttpRequest.getHeaders().add("X-Accept-Datetime-Format","UNIX");
